@@ -1,12 +1,11 @@
+import Navbar from "./sections/Navbar.jsx";
 
 function App() {
-  return (
-    <div>
-      <h1 className="font-generalsans text-black-100 bg-terminal">
-        Hello World!
-      </h1>
-    </div>
-  )
+    return (
+        <main className={"max-w-7xl mx-auto"}>
+            <Navbar />
+        </main>
+    )
 }
 
 export default App
