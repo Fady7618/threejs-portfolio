@@ -6,11 +6,15 @@ import CanvasLoader from "../components/CanvasLoader.jsx";
 // import {Leva, useControls} from "leva";
 import {useMediaQuery} from "react-responsive";
 import {calculateSizes} from "../constants/index.js";
+import Target from "../components/Target.jsx";
+import { ReactLogo } from "../components/ReactLogo.jsx";
+import Cube from "../components/Cube.jsx";
+import Rings from "../components/Rings.jsx";
 
 const Hero = () => {
-    const isSmall = useMediaQuery({maxWidth: 350})
-    const isMobile = useMediaQuery({maxWidth: 767 })
-    const isTablet = useMediaQuery({minWidth: 768, maxWidth: 1024})
+    const isSmall = useMediaQuery({maxWidth: 320})
+    const isMobile = useMediaQuery({maxWidth: 425 })
+    const isTablet = useMediaQuery({maxWidth: 768})
 
     const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
@@ -69,11 +73,22 @@ const Hero = () => {
                                 // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
                                 scale={sizes.deskScale}
                                 position={sizes.deskPosition}
-                                rotation={isMobile ? [0.2, -3.15, 0] : [-6.0, -3.15, 0]}
+                                rotation={isMobile ? [0.2, -3.15, 0] : [0.2, -3.15, 0]}
                                 // scale={isMobile ? 0.06 : 0.1}
                                 // position={isMobile ? [0.5, -4, 3] : [1, -7.5, 2]}
                                 // rotation={isMobile ? [0.4, -3.15, 0] : [-5.8, -3.15, 0]}
                             />
+                            <group>
+                                <Target
+                                    position={sizes.targetPosition}
+                                    rotation={[-0.6, -0.7,0]}
+                                />
+                                <ReactLogo
+                                    position={sizes.reactLogoPosition}
+                                />
+                                <Cube position={sizes.cubePosition}/>
+                                <Rings position={sizes.ringPosition}/>
+                            </group>
                             <ambientLight intensity={1}/>
                             <directionalLight intensity={1} position={[10,10,10]}/>
                         </Suspense>
