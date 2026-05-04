@@ -5,13 +5,19 @@ on:
     types:
       - closed
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   label-and-delete-branch:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      # Step 1: Add "merged" label to the PR
       - name: Add merged label
         uses: actions/github-script@v7
         with:
@@ -21,17 +27,15 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
-              labels: ['Merged']
+              labels: ['merged']
             });
 
-      # Step 2: Delete the source branch
       - name: Delete branch
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const branch = context.payload.pull_request.head.ref;
-            // Don't delete protected branches
             const protectedBranches = ['main'];
             if (!protectedBranches.includes(branch)) {
               await github.rest.git.deleteRef({
@@ -39,7 +43,4 @@ jobs:
                 repo: context.repo.repo,
                 ref: `heads/${branch}`
               });
-              console.log(`Deleted branch: ${branch}`);
-            } else {
-              console.log(`Skipped protected branch: ${branch}`);
             }
