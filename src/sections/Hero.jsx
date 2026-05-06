@@ -10,6 +10,9 @@ import Target from "../components/Target.jsx";
 import { ReactLogo } from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
+import JavascriptLogo from "../components/JavascriptLogo.jsx";
+import TailwindLogo from "../components/TailwindLogo.jsx";
+import ThreeLogo from "../components/ThreeLogo.jsx";
 
 const Hero = () => {
     const isSmall = useMediaQuery({maxWidth: 320})
@@ -79,18 +82,26 @@ const Hero = () => {
                                 // rotation={isMobile ? [0.4, -3.15, 0] : [-5.8, -3.15, 0]}
                             />
                             <group>
-                                <Target
-                                    position={sizes.targetPosition}
-                                    rotation={[-0.6, -0.7,0]}
-                                />
                                 <ReactLogo
                                     position={sizes.reactLogoPosition}
                                 />
-                                <Cube position={sizes.cubePosition}/>
-                                <Rings position={sizes.ringPosition}/>
+                                <JavascriptLogo
+                                    position={sizes.javascriptLogoPosition}
+                                    scale={10}
+                                />
+                                <TailwindLogo
+                                    position={sizes.tailwindLogoPosition}
+                                    rotation={[2,-0.2,0]}
+                                    scale={isMobile ? 15 : 25}
+                                />
+                                <ThreeLogo
+                                    position={sizes.threeLogoPosition}
+                                    scale={0.02}
+                                    rotation={[1,0.2,0]}
+                                />
                             </group>
                             <ambientLight intensity={1}/>
-                            <directionalLight intensity={1} position={[10,10,10]}/>
+                            <directionalLight intensity={1} position={[0,10,10]}/>
                         </Suspense>
                     </Canvas>
                 </div>

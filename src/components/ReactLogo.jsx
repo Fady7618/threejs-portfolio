@@ -23,7 +23,7 @@ export function ReactLogo(props) {
         <Float floatIntensity={3}>
             <group {...props}
                    dispose={null}
-                   scale={isMobile ? 0.4 : 0.7}
+                   scale={isMobile ? 0.3 : 0.5}
                    ref={logoRef}
             >
                 <mesh

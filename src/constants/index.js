@@ -249,11 +249,11 @@ export const myProjects = [
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
     return {
         deskScale: isSmall ? 0.05 : isMobile ? 0.06 : isTablet ? 0.06 : 0.08,
-        deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 1],
-        cubePosition: isSmall ? [3, -7, 0] : isMobile ? [5, -8, 0] : isTablet ? [8, -8, 0] : [10, -5.5, 0],
-        reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [4, 4, 0] : isTablet ? [8, 2, 0] : [10, 3, 0],
-        ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-16, 10, 0] : [-22, 10, 0],
-        targetPosition: isSmall ? [-5, -12, -10] : isMobile ? [-5.5, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+        deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+        reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [4, 4, 0] : isTablet ? [6, 2, 0] : [10, 3, 0],
+        javascriptLogoPosition: isSmall ? [-3, 4, 0] : isMobile ? [-4, 5, 0] : isTablet ? [-7, 3, 0] : [-9, 5, 0],
+        threeLogoPosition: isSmall ? [2, -8, 0] : isMobile ? [4, -9, 0] : isTablet ? [6, -8, 0] : [10, -5.5, 0],
+        tailwindLogoPosition: isSmall ? [-3, -8, 0] : isMobile ? [-6, -10, -10] : isTablet ? [-9, -7, -10] : [-11, -13, -10],
     };
 };
 
