@@ -13,6 +13,7 @@ import Rings from "../components/Rings.jsx";
 import JavascriptLogo from "../components/JavascriptLogo.jsx";
 import TailwindLogo from "../components/TailwindLogo.jsx";
 import ThreeLogo from "../components/ThreeLogo.jsx";
+import HeroCamera from "../components/HeroCamera.jsx";
 
 const Hero = () => {
     const isSmall = useMediaQuery({maxWidth: 320})
@@ -70,33 +71,35 @@ const Hero = () => {
                     <Canvas className={"w-full h-full"}>
                         <Suspense fallback={<CanvasLoader/>}>
                             <PerspectiveCamera makeDefault position={[0,0,25]} />
-                            <HackerRoom
-                                // scale={controls.scale}
-                                // position={[controls.positionX, controls.positionY, controls.positionZ]}
-                                // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
-                                scale={sizes.deskScale}
-                                position={sizes.deskPosition}
-                                rotation={isMobile ? [0.2, -3.15, 0] : [0.2, -3.15, 0]}
-                                // scale={isMobile ? 0.06 : 0.1}
-                                // position={isMobile ? [0.5, -4, 3] : [1, -7.5, 2]}
-                                // rotation={isMobile ? [0.4, -3.15, 0] : [-5.8, -3.15, 0]}
-                            />
+                            <HeroCamera isMobile={isMobile}>
+                                <HackerRoom
+                                    // scale={controls.scale}
+                                    // position={[controls.positionX, controls.positionY, controls.positionZ]}
+                                    // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
+                                    scale={sizes.deskScale}
+                                    position={sizes.deskPosition}
+                                    rotation={isMobile ? [0.2, -3.15, 0] : [0.2, -3.15, 0]}
+                                    // scale={isMobile ? 0.06 : 0.1}
+                                    // position={isMobile ? [0.5, -4, 3] : [1, -7.5, 2]}
+                                    // rotation={isMobile ? [0.4, -3.15, 0] : [-5.8, -3.15, 0]}
+                                />
+                            </HeroCamera>
                             <group>
                                 <ReactLogo
                                     position={sizes.reactLogoPosition}
                                 />
                                 <JavascriptLogo
                                     position={sizes.javascriptLogoPosition}
-                                    scale={10}
+                                    scale={sizes.javascriptLogoScale}
                                 />
                                 <TailwindLogo
                                     position={sizes.tailwindLogoPosition}
                                     rotation={[2,-0.2,0]}
-                                    scale={isMobile ? 15 : 25}
+                                    scale={sizes.tailwindLogoScale}
                                 />
                                 <ThreeLogo
                                     position={sizes.threeLogoPosition}
-                                    scale={0.02}
+                                    scale={sizes.threeLogoScale}
                                     rotation={[1,0.2,0]}
                                 />
                             </group>

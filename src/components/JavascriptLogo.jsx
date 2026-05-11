@@ -5,7 +5,7 @@ const JavascriptLogo = (props) => {
     const { nodes, materials } = useGLTF('/models/javascript.glb')
     return (
         <Float floatIntensity={1} floatingRange={[0.1, 0.5]}>
-            <group {...props} dispose={null} scale={15}>
+            <group {...props} dispose={null} >
                 <mesh
                     castShadow
                     receiveShadow
