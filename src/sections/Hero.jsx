@@ -14,13 +14,14 @@ import JavascriptLogo from "../components/JavascriptLogo.jsx";
 import TailwindLogo from "../components/TailwindLogo.jsx";
 import ThreeLogo from "../components/ThreeLogo.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
+import Button from "../components/Button.jsx";
 
 const Hero = () => {
     const isSmall = useMediaQuery({maxWidth: 320})
     const isMobile = useMediaQuery({maxWidth: 425 })
     const isTablet = useMediaQuery({maxWidth: 768})
-
-    const sizes = calculateSizes(isSmall, isMobile, isTablet);
+    const isLaptop = useMediaQuery({maxWidth: 1024})
+    const sizes = calculateSizes(isSmall, isMobile, isTablet, isLaptop);
 
     // const controls = useControls('HackerRoom',{
     //     positionX:{
@@ -107,6 +108,12 @@ const Hero = () => {
                             <directionalLight intensity={1} position={[0,10,10]}/>
                         </Suspense>
                     </Canvas>
+                </div>
+
+                <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+                    <a href="#contact" className="w-fit">
+                        <Button name="Contact" isBeam containerClass={"sm:w-fit w-full sm:min-w-96"}/>
+                    </a>
                 </div>
             </div>
         </section>
