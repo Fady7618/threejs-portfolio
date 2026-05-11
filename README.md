@@ -1,16 +1,70 @@
-# React + Vite
+# Three.js Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern 3D portfolio built with React, Vite, and Three.js. It showcases interactive scenes, animated UI, and a curated set of projects in a fast, responsive web experience.
 
-Currently, two official plugins are available:
+## Features
+- Interactive 3D hero scene and animated elements
+- Project showcase with video textures and spotlight highlights
+- Responsive layout tuned for desktop, tablet, and mobile
+- Tailwind CSS styling with reusable UI components
+- Asset pipeline for models, textures, and icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React + Vite
+- Three.js with @react-three/fiber and @react-three/drei
+- Tailwind CSS
+- GSAP for animation
+- Leva for development controls
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js 18+ (recommended)
+- npm (or pnpm/yarn)
 
-## Expanding the ESLint configuration
+### Install
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Run Dev Server
+```bash
+npm run dev
+```
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## Project Structure
+```
+public/         Static assets, models, textures
+src/            App source
+src/components/ Reusable UI and 3D components
+src/sections/   Page sections (Hero, Navbar, etc.)
+src/constants/  Data for nav, projects, and content
+```
+
+## Scripts
+- `npm run dev` Start the Vite dev server
+- `npm run build` Build for production
+- `npm run preview` Preview the production build
+- `npm run lint` Lint the codebase
+
+## Customization
+- Update portfolio content in `src/constants/index.js`
+- Swap models/textures in `public/models` and `public/textures`
+- Adjust section layouts in `src/sections`
+
+## Credits
+- 3D assets and icons are located under `public/` (add sources if required)
+- Add a live demo link here when available
+
+## License
+This project is for personal portfolio use. Add a license if you plan to share or distribute.
