@@ -20,8 +20,7 @@ const Hero = () => {
     const isSmall = useMediaQuery({maxWidth: 320})
     const isMobile = useMediaQuery({maxWidth: 425 })
     const isTablet = useMediaQuery({maxWidth: 768})
-    const isLaptop = useMediaQuery({maxWidth: 1024})
-    const sizes = calculateSizes(isSmall, isMobile, isTablet, isLaptop);
+    const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
     // const controls = useControls('HackerRoom',{
     //     positionX:{
