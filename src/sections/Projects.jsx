@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React, {Suspense, useState} from 'react'
 import {myProjects} from "../constants/index.js";
 import {Canvas} from "@react-three/fiber";
+import {Center, OrbitControls} from "@react-three/drei";
+import CanvasLoader from "../components/CanvasLoader.jsx";
+import Computer from "../components/Computer.jsx";
 
 const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
@@ -58,8 +61,18 @@ const Projects = () => {
 
                 <div className={"h-96 md:h-full border border-black-300 bg-black-200 rounded-lg"}>
                     <Canvas>
-                        <ambientLight intensity={1}/>
-                        <directionalLight position={[10,10,5]} />
+                        <ambientLight intensity={3} color={"#ffffff"}/>
+                        <directionalLight position={[5,10,-5]}/>
+                        {/*Center Component is used to Center elements and 3D Components within the Canvas*/}
+                        <Center>
+                            {/*Suspense is used as loader*/}
+                            <Suspense fallback={<CanvasLoader/>}>
+                                <group scale={1.8} position={[0,-2.5,0]} rotation={[0,0,0]}>
+                                    <Computer texture={currentProject.texture} />
+                                </group>
+                            </Suspense>
+                        </Center>
+                        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
                     </Canvas>
                 </div>
             </div>
