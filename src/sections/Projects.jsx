@@ -20,7 +20,7 @@ const Projects = () => {
         })
     }
     return (
-        <section className={"c-space my-20"}>
+        <section className={"c-space my-20"} id={"work"}>
             <p className={"head-text"}>My work</p>
 
             <div className={"grid gap-5 grid-cols-1 lg:grid-cols-2 mt-10 w-full"}>
