@@ -1,7 +1,6 @@
 import React, {useRef} from 'react'
 import {useFrame} from "@react-three/fiber";
 import {easing} from "maath";
-import target from "./Target.jsx";
 
 const HeroCamera = ({children, isMobile}) => {
     const groupRef = useRef();
