@@ -1,6 +1,6 @@
 import React from 'react'
 import {Canvas} from "@react-three/fiber";
-import {myProjects, workExperiences} from "../constants/index.js";
+import { workExperiences} from "../constants/index.js";
 
 const Experience = () => {
     return (
