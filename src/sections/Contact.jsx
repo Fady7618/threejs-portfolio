@@ -39,6 +39,11 @@ const Contact = () => {
                 animation: true,
                 text: "Thank you for you message, I will be responding as soon as possible."
             })
+            setForm({
+                name: "",
+                email: "",
+                message: "",
+            })
         }
         catch (error) {
             setLoading(false);
