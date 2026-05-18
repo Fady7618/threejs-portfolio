@@ -146,9 +146,12 @@ body {
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden relative;
   }
 
+  .work-content_dot{
+    @apply absolute w-2 h-2 rounded-full bg-black-300 group-hover:bg-black-500 mt-0.5 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
   /* contact section */
   .contact-container {
     @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
