@@ -32,7 +32,7 @@ const Experience = () => {
                                 <div key={index} className={"work-content_container group"} onClick={()=> setAnimationName(experience.animation)} onPointerEnter={()=> setAnimationName(experience.animation)} onPointerLeave={()=> setAnimationName('idle')}>
                                     <div className={"flex flex-col h-full justify-start items-center py-2"}>
                                         <div className={"work-content_logo"}>
-                                            <img src={experience.icon} alt="logo" className={"w-full h-full"}/>
+                                            <img src={experience.icon} alt="logo" className={"w-full h-full rounded-2xl"}/>
                                         </div>
                                         <div className={"work-content_bar"}>
                                             <span className={"work-content_dot"}></span>
@@ -41,7 +41,7 @@ const Experience = () => {
 
                                     <div className={"py-5 px-2.5 sm:p-5"}>
                                         <p className={"font-bold text-white-800"}>{experience.name}</p>
-                                        <p className={"font-sm mb-5"}>{experience.pos} -- {experience.duration}</p>
+                                        <p className={"font-sm mb-5"}>{experience.pos} | {experience.duration}</p>
                                         <p className={"group-hover:text-white transition-colors duration-200 ease-in-out"}>{experience.desc}</p>
                                     </div>
                                 </div>
