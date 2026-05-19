@@ -58,7 +58,7 @@ const Hero = () => {
     // });
 
     return (
-        <section className={"min-h-screen w-full flex flex-col relative"}>
+        <section className={"min-h-screen w-full flex flex-col relative"} id={"home"}>
             <div className="w-full mx-auto flex flex-col mt-20 sm:mt-36 c-space gap-3">
                 <p className={"text-white text-center text-xl sm:text-2xl font-bold font-generalsans"}>Hii, I am Fady<span className="waving-hand">👋🏻</span></p>
                 <p className={"hero_tag text-gray-400"}>Building Products</p>
