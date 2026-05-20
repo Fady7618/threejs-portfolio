@@ -4,7 +4,7 @@ export const workExperiences = [
         name: 'Syscodeia',
         pos: 'Software Engineer - Front End',
         duration: 'Oct 2025 - Present',
-        desc: 'Developed scalable Angular + TypeScript apps with clean architecture and reusable components. Built shared services, integrated REST APIs, and partnered with .NET Core/C++ backend teams on API design. Improved performance via lazy loading, optimized assets, and NgRx/RxJS state management while delivering in Agile workflows with GitHub PRs and Azure DevOps.',
+        desc: 'Developed scalable Angular + TypeScript production system with clean architecture and reusable components. Built shared services, integrated REST APIs, and partnered with .NET Core/C++ backend teams on API design. Improved performance via lazy loading, optimized assets, and NgRx/RxJS state management while delivering in Agile workflows with GitHub PRs and Azure DevOps.',
         icon: '/assets/syscodeia.png',
         animation: 'victory',
     },
